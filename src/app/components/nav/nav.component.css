@@ -1,0 +1,13 @@
+nav {
+	height: 100%;
+	background-color: aqua;
+	display: flex;
+	flex-direction: column;
+	max-width: 20ch;
+	min-height: 100vh;
+	gap: 5rem;
+}
+
+a {
+	text-decoration: none;
+}

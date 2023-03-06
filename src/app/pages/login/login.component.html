@@ -1,0 +1,29 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <label for="dni">Dni</label>
+  <input type="text" name="dni" id="dni" formControlName="dni" />
+  <div
+    *ngIf="
+      loginForm.get('dni')?.hasError('pattern') && loginForm.get('dni')?.touched
+    "
+  >
+    Formato de DNI invalido.
+  </div>
+
+  <label for="password">Contraseña</label>
+  <input
+    type="password"
+    name="password"
+    id="password"
+    formControlName="password"
+  />
+  <div
+    *ngIf="
+      loginForm.get('password')?.hasError('pattern') &&
+      loginForm.get('password')?.touched
+    "
+  >
+    La contraseña necesita una mayuscula y 8 caracteres.
+  </div>
+
+  <button type="submit">Iniciar Sesión</button>
+</form>
